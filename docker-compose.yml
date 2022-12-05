@@ -4,7 +4,6 @@ services:
   logger-api:
     image: diamol/ch09-access-log
     deploy:
-      # replicas: 3
       replicas: 1
       resources:
         limits:
@@ -18,7 +17,6 @@ services:
     ports:
       - 8088:80
     deploy:
-      # replicas: 5
       replicas: 1
       resources:
         limits:
@@ -30,10 +28,8 @@ services:
   image-of-the-day-web:
     image: diamol/ch09-image-gallery
     ports:
-      # - 80:80
       - 80:80
     deploy:
-      # replicas: 2
       replicas: 1
       resources:
         limits:
