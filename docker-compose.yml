@@ -4,10 +4,10 @@ services:
   logger-api:
     image: diamol/ch09-access-log
     deploy:
-      replicas: 1
+      replicas: 3
       resources:
         limits:
-          cpus: "0.50"
+          cpus: "0.2"
           memory: 100M
     networks:
       - app-net
@@ -17,10 +17,10 @@ services:
     ports:
       - 8088:80
     deploy:
-      replicas: 1
+      replicas: 5
       resources:
         limits:
-          cpus: "0.50"
+          cpus: "0.2"
           memory: 100M
     networks:
       - app-net
@@ -30,10 +30,10 @@ services:
     ports:
       - 80:80
     deploy:
-      replicas: 1
+      replicas: 2
       resources:
         limits:
-          cpus: "0.50"
+          cpus: "0.2"
           memory: 100M
     networks:
       - app-net
