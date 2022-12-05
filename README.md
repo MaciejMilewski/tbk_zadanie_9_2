@@ -23,4 +23,4 @@ docker stack deploy -c ./docker-compose.yml images-app
 #### Image gallery ustawiony na standardowym porcie HTTP 80
 ![](images/gallery.jpg)
 #### docker container ls
-![](images/container_ls.jpg.jpg)
+![](images/container_ls.jpg)
