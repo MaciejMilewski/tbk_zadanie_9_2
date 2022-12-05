@@ -8,8 +8,9 @@ Usuwanie:
 .\clean.ps1  
 ``` 
 
-Polecenie z run.ps1:
+Polecenia z run.ps1:
 ```sh
+docker swarm init
 docker stack deploy -c ./docker-compose.yml images-app
 ``` 
 
