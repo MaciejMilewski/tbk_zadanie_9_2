@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  logger-api:
+    image: diamol/ch09-access-log
+    deploy:
+      # replicas: 3
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 100M
+    networks:
+      - app-net
+
+  image-of-the-day-api:
+    image: diamol/ch09-image-of-the-day
+    ports:
+      - 8088:80
+    deploy:
+      # replicas: 5
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 100M
+    networks:
+      - app-net
+
+  image-of-the-day-web:
+    image: diamol/ch09-image-gallery
+    ports:
+      # - 80:80
+      - 80:80
+    deploy:
+      # replicas: 2
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 100M
+    networks:
+      - app-net
+
+networks:
+  app-net:
