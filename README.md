@@ -22,6 +22,6 @@ docker stack deploy -c ./docker-compose.yml images-app
 #### Kontener API działający na porice 8088
 ![](images/api_browser.jpg)
 #### Image gallery ustawiony na standardowym porcie HTTP 80
-![](images/gallery.jpg)
+![](images/gallery_stars.jpg)
 #### docker container ls
 ![](images/container_ls.jpg)
