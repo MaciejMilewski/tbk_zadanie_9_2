@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  logger-api:
+  accesslog:
     image: diamol/ch09-access-log
     deploy:
       replicas: 3
@@ -15,7 +15,7 @@ services:
     networks:
       - app-net
 
-  image-of-the-day-api:
+  iotd:
     image: diamol/ch09-image-of-the-day
     ports:
       - 8088:80
@@ -40,7 +40,7 @@ services:
     networks:
       - app-net
 
-  image-of-the-day-web:
+  image-gallery:
     image: diamol/ch09-image-gallery
     ports:
       - 80:80
