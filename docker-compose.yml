@@ -7,8 +7,11 @@ services:
       replicas: 3
       resources:
         limits:
-          cpus: "0.2"
-          memory: 100M
+          cpus: "0.5"
+          memory: 200M
+        reservations:
+          cpus: '0.2'
+          memory: 50M
     networks:
       - app-net
 
@@ -18,10 +21,22 @@ services:
       - 8088:80
     deploy:
       replicas: 5
+      update_config:
+        parallelism: 2
+        order: start-first
+        monitor: 60s
+        failure_action: rollback
+      rollback_config:
+        parallelism: 4
+        order: start-first
+        failure_action: continue
       resources:
         limits:
-          cpus: "0.2"
-          memory: 100M
+          cpus: "0.5"
+          memory: 500M
+        reservations:
+          cpus: '0.2'
+          memory: 50M
     networks:
       - app-net
 
@@ -33,10 +48,14 @@ services:
       replicas: 2
       resources:
         limits:
-          cpus: "0.2"
-          memory: 100M
+          cpus: "0.5"
+          memory: 500M
+        reservations:
+          cpus: '0.2'
+          memory: 50M
     networks:
       - app-net
 
 networks:
   app-net:
+    name: image-gallery
